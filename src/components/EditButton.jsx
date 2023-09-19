@@ -1,9 +1,8 @@
 import { useState } from 'react'
 
-function EditButton() {
-    const [active, setActive] = useState(true);
-    
-    
+function EditButton({onClick}) {
+
+    return <button onClick={onClick}>Edit</button>
 }
 
 export default EditButton

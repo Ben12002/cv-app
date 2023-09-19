@@ -6,12 +6,21 @@ import Field from './Field'
 function EducationInformation() {
     const [active, setActive] = useState(true);
     
+    function handleClick() {
+        setActive(!active);
+    }
+
+    let button = active ? <SaveButton onClick={handleClick}/> : <EditButton onClick={handleClick}/>
+
     return (
         <>
             <h2>Education Information</h2>
-            <Field active={active} label={"University"} type={"text"}/>
-            <Field active={active} label={"Major"} type={"text"}/>
-            <Field active={active} label={"Degree"} type={"text"}/>
+            <form>
+                <Field active={active} label={"University"} type={"text"}/>
+                <Field active={active} label={"Major"} type={"text"}/>
+                <Field active={active} label={"Degree"} type={"text"}/>
+                {button}
+            </form>
         </>
     )
 }

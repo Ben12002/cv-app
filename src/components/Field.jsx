@@ -10,8 +10,8 @@ function Field({active, label, type}){
     if (active) {
         return (
             <>
-                <label htmlFor={label}>{label}</label>
-                <input id={label} type={type} onChange={handleChange}></input>
+                <label htmlFor={label}>{label}:</label>
+                <input id={label} type={type} onChange={handleChange} value={content}></input>
             </>
             
         )

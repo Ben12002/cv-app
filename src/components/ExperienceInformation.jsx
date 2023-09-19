@@ -6,13 +6,21 @@ import Field from './Field'
 function ExperienceInformation() {
     const [active, setActive] = useState(true);
 
+    function handleClick() {
+        setActive(!active);
+    }
+
+    let button = active ? <SaveButton onClick={handleClick}/> : <EditButton onClick={handleClick}/>
 
     return (
         <>
             <h2>Experience Information</h2>
-            <Field active={active} label={"Company"} type={"text"}/>
-            <Field active={active} label={"Role"} type={"text"}/>
-            <Field active={active} label={"Years of Experience"} type={"number"}/>
+            <form>
+                <Field active={active} label={"Company"} type={"text"}/>
+                <Field active={active} label={"Role"} type={"text"}/>
+                <Field active={active} label={"Years of Experience"} type={"number"}/>
+                {button}
+            </form>
         </>
     )
 }
